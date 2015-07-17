@@ -20,8 +20,8 @@ int main(int argc, char ** argv)
     verbose = true;
   }
 
-  long long alen = stoll(argv[1]);
-  long long blen = stoll(argv[2]);
+  long long alen = atoll(argv[1]);
+  long long blen = atoll(argv[2]);
   long long * a = new long long[alen];
   long long * b = new long long[blen];
   long long * c = new long long[max(alen, blen)];
@@ -36,7 +36,7 @@ int main(int argc, char ** argv)
 
   for(int i=0; i < alen; ++i)
   {
-    a[i] = rand() % alen;
+    a[i] = rand();
     if(verbose) cerr << a[i] << " ";
   }
   if(verbose)
@@ -48,7 +48,7 @@ int main(int argc, char ** argv)
 
   for(int i=0; i < blen; ++i)
   {
-    b[i] = rand() % blen/2;
+    b[i] = rand();
     if(verbose) cerr << b[i] << " ";
   }
   if(verbose) cerr << "]" << endl;
